@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JobStart — Crée ton CV et prépare ta candidature</title>
+<meta name="description" content="Crée gratuitement ton CV, prépare ta lettre de motivation et découvre des opportunités d'emploi.">
+<meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="JobStart">
+<meta property="og:title" content="JobStart — Crée ton CV et prépare ta candidature">
+<meta property="og:description" content="Crée gratuitement ton CV, prépare ta lettre de motivation et découvre des opportunités d'emploi.">
+<meta name="theme-color" content="#4338ca">
+<style>
+:root{--ink:#0f172a;--mut:#5b6678;--p:#4338ca;--p2:#3730a3;--soft:#eef2ff;--bg:#fafbfc;--b:#e5e7eb;--r:14px;--sh:0 1px 2px #0f172a0d,0 4px 14px #0f172a0a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+h1,h2,h3{line-height:1.2;letter-spacing:-.02em}h1{font-size:clamp(1.7rem,4vw,2.2rem);margin:0 0 16px}h3{margin:.2em 0}
+.wrap{max-width:1120px;margin:auto;padding:0 20px}main{padding:32px 20px 72px;outline:0}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;padding:8px;z-index:99}
+:focus-visible{outline:3px solid #818cf8;outline-offset:2px}
+.top{background:#ffffffee;backdrop-filter:blur(8px);border-bottom:1px solid var(--b);position:sticky;top:0;z-index:20}
+.bar{display:flex;align-items:center;justify-content:space-between;min-height:64px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:1.35rem;color:var(--ink);text-decoration:none;letter-spacing:-.03em}.logo span{color:var(--p)}
+nav{display:flex;align-items:center;gap:4px}nav a{color:var(--mut);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px;transition:.15s}
+nav a:hover{color:var(--ink);background:var(--soft)}nav a[aria-current]{color:var(--p)}nav a.btn{color:#fff;margin-left:8px}nav a.btn:hover{color:#fff;background:var(--p2)}
+#burger{display:none;background:#fff;border:1px solid #cbd5e1;border-radius:10px;padding:8px 14px;font:inherit;font-weight:600;cursor:pointer}
+@media(max-width:800px){#burger{display:block}nav{display:none;flex-direction:column;align-items:stretch;width:100%;padding:6px 0 14px}nav.open{display:flex}nav a{padding:12px}nav a.btn{margin:8px 0 0;text-align:center}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--p);color:#fff;border:1px solid var(--p);border-radius:10px;padding:11px 20px;font:inherit;font-weight:600;cursor:pointer;text-decoration:none;transition:.15s;box-shadow:var(--sh)}
+.btn:hover{background:var(--p2);transform:translateY(-1px)}.btn:active{transform:none}
+.btn.ghost{background:#fff;color:var(--ink);border-color:#cbd5e1;box-shadow:none}.btn.ghost:hover{background:var(--soft);border-color:var(--p);color:var(--p)}
+.btn.sm{padding:6px 12px;font-size:.88rem}.btn:disabled,.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+.hero{text-align:center;padding:56px 0 24px}.eyebrow{display:inline-block;background:var(--soft);color:var(--p);font-weight:600;font-size:.85rem;padding:4px 14px;border-radius:99px;margin-bottom:18px}
+.hero h1{font-size:clamp(2.2rem,6vw,3.6rem);letter-spacing:-.035em;margin:0 auto 16px;max-width:760px}.lead{color:var(--mut);font-size:1.2rem;max-width:600px;margin:0 auto 28px}
+.hero .btn{margin:6px}.mini{color:var(--mut);font-size:.92rem;margin-top:16px}
+h2.sec{font-size:clamp(1.5rem,3vw,1.9rem);margin:80px 0 8px;text-align:center}.sub{text-align:center;color:var(--mut);margin:0 0 32px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:#fff;border:1px solid var(--b);border-radius:var(--r);padding:24px;box-shadow:var(--sh);transition:.2s}.card p{color:var(--mut);margin:.4em 0}
+.grid>.card:hover{transform:translateY(-2px);box-shadow:0 8px 24px #0f172a14}
+.ico{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--soft);color:var(--p);margin-bottom:12px}
+.ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--p);color:#fff;font-weight:700;margin-bottom:8px}
+.cta{background:var(--ink);color:#fff;border-radius:20px;padding:52px 24px;text-align:center;margin-top:80px}.cta h2{margin:0 0 22px;font-size:clamp(1.5rem,3vw,2rem)}.cta .btn{background:#fff;color:var(--ink);border-color:#fff}
+label{display:block;font-weight:600;font-size:.92rem;margin:14px 0}
+input,select,textarea{display:block;width:100%;margin-top:6px;padding:11px 12px;border:1px solid #cbd5e1;border-radius:10px;font:inherit;background:#fff;color:var(--ink);transition:.15s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--p);box-shadow:0 0 0 3px #4338ca26}::placeholder{color:#8591a5}
+input[type=checkbox],input[type=radio]{display:inline;width:auto;margin:0 8px 0 0}textarea{min-height:110px}
+.cols{display:grid;gap:0 16px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.cvlayout{display:grid;gap:24px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}.cvlayout aside{position:sticky;top:84px}
+@media(max-width:900px){.cvlayout{grid-template-columns:1fr}.cvlayout aside{position:static}}
+.prog{height:6px;background:var(--b);border-radius:8px;overflow:hidden}.prog i{display:block;height:100%;background:var(--p);transition:width .3s}
+.stepper{display:flex;gap:6px;list-style:none;padding:0 0 4px;margin:14px 0;overflow-x:auto}
+.chip{white-space:nowrap;border:1px solid var(--b);background:#fff;border-radius:99px;padding:5px 12px;font:inherit;font-size:.82rem;color:var(--mut);cursor:pointer;transition:.15s}
+.chip:hover{border-color:var(--p)}.chip.on{background:var(--p);color:#fff;border-color:var(--p)}.chip.done{background:var(--soft);color:var(--p);border-color:#c7d2fe}
+.steps{color:var(--mut);font-size:.88rem}.nav2{display:flex;justify-content:space-between;gap:8px;margin-top:20px;padding-top:16px;border-top:1px solid var(--b);flex-wrap:wrap}
+.items{list-style:none;padding:0}.items li{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap;border:1px solid var(--b);border-radius:10px;padding:8px 12px;margin:6px 0;background:#fff}
+.badge{display:inline-block;background:#fef3c7;color:#92400e;font-size:.75rem;font-weight:700;padding:2px 10px;border-radius:6px}
+.note{background:#f8fafc;border:1px solid var(--b);border-radius:10px;padding:10px 14px;margin:14px 0;font-size:.92rem;color:var(--mut)}
+.tag{display:inline-block;background:var(--soft);color:var(--p2);border-radius:99px;padding:2px 12px;margin:2px;font-size:.85rem}.tag.ok{background:#dcfce7;color:#166534}
+.err{color:#b91c1c;font-weight:600;min-height:1.4em;margin:8px 0 0}
+.paper{min-height:380px;font:15px/1.7 Georgia,serif;padding:24px}
+.cv{background:#fff;border:1px solid var(--b);box-shadow:var(--sh);width:100%;aspect-ratio:210/297;padding:7%;font-size:clamp(8px,1.5vw,13px);line-height:1.5;color:#111;border-radius:4px}
+@media(max-width:900px){.cv{font-size:clamp(9px,2.4vw,14px)}}
+.cv h1{margin:0;font-size:2.2em}.cv h2{font-size:1.05em;margin:1.3em 0 .4em}.cv p{margin:.2em 0}.cv .ttl{font-size:1.2em}.cv .ct,.cv .per{color:#555}.cv .item{margin:.6em 0}
+.t-classique{font-family:Georgia,serif}.t-classique header{text-align:center;border-bottom:2px solid #111;padding-bottom:.7em}.t-classique h2{text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid #999;padding-bottom:.2em}
+.t-moderne{font-family:system-ui,sans-serif}.t-moderne header{background:var(--p);color:#fff;margin:-7% -7% 0;padding:7%}.t-moderne .ct,.t-moderne .ttl{color:#e0e7ff}.t-moderne h2{color:var(--p);border-left:3px solid var(--p);padding-left:.6em;text-transform:uppercase;letter-spacing:.08em}
+.t-minimaliste{font-family:system-ui,sans-serif;font-weight:300}.t-minimaliste h1{font-weight:300;letter-spacing:.06em;text-transform:uppercase}.t-minimaliste h2{font-weight:600;font-size:.8em;letter-spacing:.2em;text-transform:uppercase;color:#777;margin-top:1.8em}
+footer{border-top:1px solid var(--b);background:#fff;padding:32px 0;color:var(--mut);font-size:.9rem}.foot{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));align-items:start}footer h2{font-size:1rem;margin:0 0 4px;color:var(--ink)}footer p{margin:.3em 0}
+#toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:10px;opacity:0;pointer-events:none;transition:.25s;z-index:50}
+#toast.show{opacity:1;transform:translate(-50%,0)}#toast.bad{background:#b91c1c}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid var(--b);border-top-color:var(--p);border-radius:50%;animation:sp .7s linear infinite;vertical-align:-2px;margin-right:6px}@keyframes sp{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+#printzone{display:none}.letter{white-space:pre-wrap;font:12pt/1.5 Georgia,serif}
+@media print{@page{size:A4;margin:0}body>*:not(#printzone){display:none!important}#printzone{display:block}
+#printzone .cv{width:210mm;min-height:297mm;aspect-ratio:auto;border:0;box-shadow:none;border-radius:0;padding:15mm;font-size:11pt}#printzone .t-moderne header{margin:-15mm -15mm 0;padding:15mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}#printzone .letter{padding:25mm}}
+</style></head><body>
+<a class="skip" href="#app">Aller au contenu</a>
+<header class="top"><div class="wrap bar"><a class="logo" href="#/" aria-label="JobStart, accueil">Job<span>Start</span></a>
+<button id="burger" aria-expanded="false" aria-controls="nav">☰ Menu</button>
+<nav id="nav" aria-label="Navigation principale"><a href="#/">Accueil</a><a href="#/cv">Créer mon CV</a><a href="#/lettre">Lettre de motivation</a><a href="#/emplois">Trouver un emploi</a><a class="btn sm" href="#/cv">Commencer</a></nav></div></header>
+<main id="app" class="wrap" tabindex="-1"></main>
+<footer><div class="wrap foot"><div><strong>JobStart</strong><p>Tes données (CV, lettre) sont enregistrées uniquement dans ton navigateur. Elles ne sont envoyées à aucun service externe.</p></div>
+<section id="confidentialite" aria-labelledby="pc"><h2 id="pc">Confidentialité</h2><p>La politique de confidentialité complète sera ajoutée ici avant la mise en ligne publique.</p></section>
+<div><button id="wipe" class="btn ghost sm">Supprimer mes données locales</button></div></div></footer>
+<div id="printzone"></div>
+<script>
+// ===== utils.js =====
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
+const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch { } };
+const KEYS = ['jobstart_cv', 'jobstart_letter'];
+// Imprime un bloc HTML (le CSS @media print n'affiche que #printzone)
+function printHTML(html) { $('#printzone').innerHTML = html; window.print(); }
+function toast(m, bad) { let t = $('#toast'); if (!t) { t = document.createElement('div'); t.id = 'toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
+  t.textContent = m; t.className = 'show' + (bad ? ' bad' : ''); clearTimeout(t._t); t._t = setTimeout(() => t.className = '', 2600); }
+
+// ===== data.js =====
+// OFFRES DE DÉMONSTRATION — fictives, aucune n'est réelle.
+const DEMO_OFFERS = [
+  { id: 'd1', titre: 'Vendeur / Vendeuse', ent: 'Entreprise Exemple A', ville: 'Nancy', contrat: 'CDI', tele: false, date: '2026-10-01', desc: 'Accueil et conseil des clients en magasin.', competences: ['Accueil', 'Vente', 'Communication', 'Caisse'] },
+  { id: 'd2', titre: 'Assistant(e) administratif(ve)', ent: 'Société Exemple B', ville: 'Metz', contrat: 'CDD', tele: true, date: '2026-09-28', desc: 'Gestion du courrier, classement et suivi de dossiers.', competences: ['Word', 'Excel', 'Organisation', 'Rigueur'] },
+  { id: 'd3', titre: 'Stage – Communication digitale', ent: 'Agence Exemple C', ville: 'Strasbourg', contrat: 'Stage', tele: true, date: '2026-09-30', desc: 'Aide à la création de contenus pour les réseaux sociaux.', competences: ['Réseaux sociaux', 'Rédaction', 'Créativité'] },
+  { id: 'd4', titre: 'Alternance – Développeur web', ent: 'Studio Exemple D', ville: 'Nancy', contrat: 'Alternance', tele: false, date: '2026-10-03', desc: 'Participation au développement de sites web.', competences: ['HTML', 'CSS', 'JavaScript', 'Travail en équipe'] },
+  { id: 'd5', titre: 'Serveur / Serveuse', ent: 'Restaurant Exemple E', ville: 'Nancy', contrat: 'Temps partiel', tele: false, date: '2026-10-05', desc: 'Service en salle les soirs et week-ends.', competences: ['Service', 'Sourire', 'Rapidité'] }
+];
+
+// ===== cv.js =====
+const LISTS = {
+  exp: { t: 'Expérience', main: 'titre', sub: 'ent', f: [['titre', 'Poste'], ['ent', 'Entreprise'], ['ville', 'Ville'], ['debut', 'Début', 'month'], ['fin', 'Fin', 'month'], ['actuel', 'Poste actuel', 'checkbox'], ['desc', 'Description', 'textarea']] },
+  edu: { t: 'Formation', main: 'diplome', sub: 'ecole', f: [['diplome', 'Diplôme'], ['ecole', 'Établissement'], ['ville', 'Ville'], ['debut', 'Début', 'month'], ['fin', 'Fin', 'month'], ['desc', 'Description', 'textarea']] },
+  skills: { t: 'Compétence', main: 'nom', sub: 'niveau', f: [['nom', 'Compétence'], ['niveau', 'Niveau', 'select', ['Débutant', 'Intermédiaire', 'Avancé', 'Expert']]] },
+  langs: { t: 'Langue', main: 'nom', sub: 'niveau', f: [['nom', 'Langue'], ['niveau', 'Niveau', 'select', ['Notions', 'Intermédiaire', 'Courant', 'Langue maternelle']]] }
+};
+const STEPS = ['Infos', 'Présentation', 'Expériences', 'Formation', 'Compétences', 'Langues', 'Modèle', 'Aperçu'];
+const LIST_STEP = { 2: 'exp', 3: 'edu', 4: 'skills', 5: 'langs' };
+let cv = load('jobstart_cv', null) || { p: {}, titre: '', resume: '', exp: [], edu: [], skills: [], langs: [], tpl: 'classique' };
+let step = 0, editing = -1;
+
+const PH = { 'p.prenom': 'Camille', 'p.nom': 'Martin', 'p.ville': 'Nancy', 'p.email': 'camille.martin@email.fr', 'p.tel': '06 12 34 56 78', 'p.linkedin': 'linkedin.com/in/camille-martin', 'p.site': 'camille-martin.fr',
+  titre: 'Assistant commercial', resume: 'Motivé(e) et organisé(e), je recherche un poste où mettre mon sens du contact au service des clients.', ent: 'Nom de l\'entreprise', ville: 'Nancy', desc: 'Missions réalisées, résultats obtenus…', diplome: 'BTS Support à l\'action managériale', ecole: 'Lycée / Université', nom: 'Ex : Communication' };
+const getP = p => p.split('.').reduce((o, k) => o?.[k], cv) || '';
+const setP = (p, v) => { const k = p.split('.'), l = k.pop(); k.reduce((o, x) => o[x] ??= {}, cv)[l] = v; };
+const inp = (p, l, t = 'text') => `<label>${l}<input type="${t}" data-b="${p}" value="${esc(getP(p))}" placeholder="${esc(PH[p] || '')}"></label>`;
+
+function field([n, l, t, o], v) {
+  if (t === 'textarea') return `<label>${l}<textarea id="d_${n}" placeholder="${esc(PH[n] || '')}">${esc(v)}</textarea></label>`;
+  if (t === 'select') return `<label>${l}<select id="d_${n}">${o.map(x => `<option${x === v ? ' selected' : ''}>${x}</option>`).join('')}</select></label>`;
+  if (t === 'checkbox') return `<label><input type="checkbox" id="d_${n}"${v ? ' checked' : ''}>${l}</label>`;
+  return `<label>${l}<input type="${t || 'text'}" id="d_${n}" value="${esc(v)}" placeholder="${esc(PH[n] || '')}"></label>`;
+}
+
+function listStep(key) {
+  const L = LISTS[key], items = cv[key], cur = editing >= 0 ? items[editing] : {};
+  return `<ul class="items">${items.map((it, i) => `<li><span><b>${esc(it[L.main])}</b> ${esc(it[L.sub])}</span><span>
+    <button class="btn sm ghost" data-act="up" data-i="${i}" aria-label="Monter">↑</button>
+    <button class="btn sm ghost" data-act="down" data-i="${i}" aria-label="Descendre">↓</button>
+    <button class="btn sm ghost" data-act="edit" data-i="${i}">Modifier</button>
+    <button class="btn sm ghost" data-act="del" data-i="${i}">Supprimer</button></span></li>`).join('') || '<li>Rien d\'ajouté pour le moment.</li>'}</ul>
+    <h3>${editing >= 0 ? 'Modifier' : 'Ajouter'} : ${L.t}</h3><div class="cols">${L.f.map(f => field(f, cur[f[0]] ?? '')).join('')}</div>
+    <button class="btn" data-act="save">${editing >= 0 ? 'Enregistrer' : 'Ajouter'}</button>
+    ${editing >= 0 ? '<button class="btn ghost" data-act="cancel">Annuler</button>' : ''}<p id="err" role="alert" style="color:#b00020"></p>`;
+}
+
+function stepHTML() {
+  if (LIST_STEP[step]) return listStep(LIST_STEP[step]);
+  if (step === 0) return `<div class="cols">${inp('p.prenom', 'Prénom')}${inp('p.nom', 'Nom')}${inp('p.ville', 'Ville')}${inp('p.email', 'Email', 'email')}${inp('p.tel', 'Téléphone', 'tel')}${inp('p.linkedin', 'LinkedIn (facultatif)')}${inp('p.site', 'Site personnel (facultatif)')}</div>`;
+  if (step === 1) return `${inp('titre', 'Titre professionnel')}<label>Présentation (2 à 3 phrases)<textarea data-b="resume" placeholder="${esc(PH.resume)}">${esc(cv.resume)}</textarea></label>`;
+  if (step === 6) return ['classique', 'moderne', 'minimaliste'].map(t => `<label><input type="radio" name="tpl" data-b="tpl" value="${t}"${cv.tpl === t ? ' checked' : ''}>${t[0].toUpperCase() + t.slice(1)}</label>`).join('');
+  return `<p>Vérifie ton CV à droite.</p><button class="btn" data-act="print">Imprimer / Enregistrer en PDF</button> <button class="btn ghost" data-act="go" data-i="0">Modifier</button>
+  <p class="note">Pour le PDF : clique sur Imprimer, puis choisis « Enregistrer au format PDF » comme imprimante.</p>`;
+}
+
+function cvHTML() {
+  const p = cv.p, per = e => [e.debut, e.actuel ? 'Aujourd\'hui' : e.fin].filter(Boolean).join(' – ');
+  const sec = (t, h) => h ? `<section><h2>${t}</h2>${h}</section>` : '';
+  const blocks = (arr, a, b) => arr.map(e => `<div class="item"><b>${esc(e[a])}</b>${e[b] ? ', ' + esc(e[b]) : ''}${e.ville ? ' – ' + esc(e.ville) : ''}<p class="per">${esc(per(e))}</p>${e.desc ? `<p>${esc(e.desc)}</p>` : ''}</div>`).join('');
+  const tags = arr => arr.map(s => `${esc(s.nom)} (${esc(s.niveau)})`).join(' · ');
+  return `<article class="cv t-${cv.tpl}"><header><h1>${esc(p.prenom)} ${esc(p.nom)}</h1><p class="ttl">${esc(cv.titre)}</p>
+  <p class="ct">${[p.ville, p.email, p.tel, p.linkedin, p.site].filter(Boolean).map(esc).join(' · ')}</p></header>
+  ${sec('Profil', cv.resume && `<p>${esc(cv.resume)}</p>`)}${sec('Expériences', blocks(cv.exp, 'titre', 'ent'))}${sec('Formation', blocks(cv.edu, 'diplome', 'ecole'))}
+  ${sec('Compétences', cv.skills.length && `<p>${tags(cv.skills)}</p>`)}${sec('Langues', cv.langs.length && `<p>${tags(cv.langs)}</p>`)}</article>`;
+}
+
+function renderCV(root) {
+  const draw = () => {
+    root.innerHTML = `<h1>Créer mon CV</h1><div class="cvlayout"><section class="card" aria-label="Formulaire">
+    <div class="prog" role="progressbar" aria-valuemin="1" aria-valuemax="8" aria-valuenow="${step + 1}"><i style="width:${(step + 1) * 12.5}%"></i></div>
+    <ol class="stepper" aria-label="Étapes">${STEPS.map((s, i) => `<li><button class="chip${i === step ? ' on' : i < step ? ' done' : ''}" data-act="go" data-i="${i}"${i === step ? ' aria-current="step"' : ''}>${i + 1}. ${s}</button></li>`).join('')}</ol><h2 style="font-size:1.2rem;margin:0 0 4px">${STEPS[step]}</h2>${stepHTML()}
+    <div class="nav2"><button class="btn ghost" data-act="prev"${step ? '' : ' disabled'}>← Précédent</button><button class="btn" data-act="next"${step < 7 ? '' : ' disabled'}>Suivant →</button></div>
+    <p class="steps">Tes données sont enregistrées dans ce navigateur.</p></section><aside id="cvprev" aria-label="Aperçu du CV">${cvHTML()}</aside></div>`;
+  };
+  const persist = () => save('jobstart_cv', cv);
+  root.oninput = e => { const b = e.target.dataset.b; if (!b) return; setP(b, e.target.value); persist(); $('#cvprev').innerHTML = cvHTML(); };
+  root.onclick = e => {
+    const el = e.target.closest('[data-act]'); if (!el) return;
+    const a = el.dataset.act, i = +el.dataset.i, key = LIST_STEP[step], arr = cv[key];
+    if (a === 'next') { step++; editing = -1; }
+    else if (a === 'prev') { step--; editing = -1; }
+    else if (a === 'go') { step = i; editing = -1; }
+    else if (a === 'print') return printHTML(cvHTML());
+    else if (a === 'edit') editing = i;
+    else if (a === 'cancel') editing = -1;
+    else if (a === 'del') { if (!confirm('Supprimer cet élément ?')) return; arr.splice(i, 1); editing = -1; toast('Élément supprimé'); }
+    else if (a === 'up' && i > 0) [arr[i - 1], arr[i]] = [arr[i], arr[i - 1]];
+    else if (a === 'down' && i < arr.length - 1) [arr[i + 1], arr[i]] = [arr[i], arr[i + 1]];
+    else if (a === 'save') {
+      const o = {}; LISTS[key].f.forEach(([n, , t]) => { const x = $('#d_' + n); o[n] = t === 'checkbox' ? x.checked : x.value.trim(); });
+      if (!o[LISTS[key].main]) { $('#err').textContent = 'Merci de remplir le premier champ.'; return; }
+      editing >= 0 ? arr[editing] = o : arr.push(o); editing = -1; toast('Enregistré ✓');
+    }
+    persist(); draw();
+  };
+  draw();
+}
+
+// ===== jobs.js =====
+/* ---------- LETTRE DE MOTIVATION ---------- */
+const offerById = id => JobSources.flatMap(s => s.all()).find(o => o.id === id);
+
+function genLetter(v) {
+  const S = {
+    classique: ['Madame, Monsieur,', 'Veuillez agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.'],
+    simple: ['Bonjour,', 'Cordialement,'],
+    moderne: [`Bonjour l'équipe ${v.ent || ''},`.replace(/ ,$/, ','), 'Bien à vous,']
+  }[v.style || 'classique'];
+  const l = x => x ? x : '…';
+  return `${v.nom}${v.ville ? '\n' + v.ville : ''}\n\n${S[0]}\n\nJe souhaite postuler au poste de ${l(v.poste)} au sein de ${l(v.ent)}.\n\n` +
+    `${v.exp ? 'Mon parcours : ' + v.exp + '\n\n' : ''}${v.comp ? 'Mes compétences principales : ' + v.comp + '.\n\n' : ''}` +
+    `${v.motiv ? v.motiv + '\n\n' : ''}${v.dispo ? 'Disponibilité : ' + v.dispo + '.\n\n' : ''}Je serais heureux(se) d'échanger avec vous lors d'un entretien.\n\n${S[1]}\n${v.nom}`;
+}
+
+function renderLetter(root, q) {
+  const o = q.offre ? offerById(q.offre) : null;
+  const v = { style: 'classique', nom: [cv.p.prenom, cv.p.nom].filter(Boolean).join(' '), ville: cv.p.ville || '', comp: cv.skills.map(s => s.nom).join(', '), ...load('jobstart_letter', {}) };
+  if (o) Object.assign(v, { poste: o.titre, ent: o.ent });
+  const F = [['nom', 'Nom'], ['poste', 'Poste recherché'], ['ent', 'Entreprise'], ['ville', 'Ville'], ['exp', 'Expériences', 'textarea'], ['comp', 'Compétences', 'textarea'], ['motiv', 'Motivation', 'textarea'], ['dispo', 'Disponibilité']];
+  root.innerHTML = `<h1>Lettre de motivation</h1><div class="cvlayout"><form class="card" onsubmit="return false"><div class="cols">${F.map(([n, l, t]) => t ? `<label>${l}<textarea id="l_${n}">${esc(v[n])}</textarea></label>` : `<label>${l}<input id="l_${n}" value="${esc(v[n])}" placeholder="${esc({ nom: 'Camille Martin', poste: 'Assistant commercial', ent: 'Nom de l\'entreprise', ville: 'Nancy', dispo: 'Immédiate' }[n] || '')}"></label>`).join('')}</div>
+  <label>Style<select id="l_style">${['classique', 'simple', 'moderne'].map(s => `<option${s === v.style ? ' selected' : ''}>${s}</option>`).join('')}</select></label>
+  <button class="btn" id="gen">Générer la lettre</button> <button class="btn ghost" id="rst" type="button">Recommencer</button><p id="lerr" class="err" role="alert"></p></form>
+  <section class="card"><label>Ta lettre (modifiable)<textarea id="lt" class="paper" placeholder="Ta lettre apparaîtra ici. Tu pourras la modifier librement."></textarea></label>
+  <p class="note">Brouillon généré automatiquement : relis-le et adapte-le, il ne garantit aucun résultat.</p>
+  <button class="btn ghost" id="cp">Copier</button> <button class="btn ghost" id="pr">Imprimer</button> <button class="btn ghost" id="dl">Télécharger (.txt)</button></section></div>`;
+  const read = () => { const r = {}; [...F.map(f => f[0]), 'style'].forEach(n => r[n] = $('#l_' + n).value); return r; };
+  $('#gen').onclick = () => { const r = read(); if (!r.nom.trim() || !r.poste.trim()) { $('#lerr').textContent = 'Merci de renseigner ton nom et le poste recherché.'; return; }
+    $('#lerr').textContent = ''; save('jobstart_letter', r); $('#lt').value = genLetter(r); toast('Brouillon généré ✓'); };
+  $('#rst').onclick = () => { if (!confirm('Effacer le formulaire et la lettre ?')) return; localStorage.removeItem('jobstart_letter'); renderLetter(root, {}); toast('Formulaire réinitialisé'); };
+  $('#cp').onclick = () => { if (!$('#lt').value.trim()) return toast('Génère d\'abord une lettre', 1); navigator.clipboard?.writeText($('#lt').value).then(() => toast('Lettre copiée ✓'), () => toast('Copie impossible : sélectionne le texte', 1)); };
+  $('#pr').onclick = () => $('#lt').value.trim() ? printHTML(`<div class="letter">${esc($('#lt').value)}</div>`) : toast('Génère d\'abord une lettre', 1);
+  $('#dl').onclick = () => { if (!$('#lt').value.trim()) return toast('Génère d\'abord une lettre', 1); const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([$('#lt').value], { type: 'text/plain' })); a.download = 'lettre.txt'; a.click(); };
+}
+
+/* ---------- SOURCES D'OFFRES ----------
+   Pour ajouter une vraie source (API autorisée) : ajoute un objet { name, all(), search(q) }
+   dans JobSources. Chaque offre doit avoir : id, titre, ent, ville, contrat, tele, date, desc, competences, source, url. */
+const norm = s => String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+const JobSources = [{
+  name: 'DEMO',
+  all: () => DEMO_OFFERS.map(o => ({ ...o, source: 'DEMO', url: null })),
+  async search(q) {
+    return this.all().filter(o =>
+      (!q.q || norm(o.titre + o.desc + o.competences.join()).includes(norm(q.q))) &&
+      (!q.ville || norm(o.ville).includes(norm(q.ville))) &&
+      (!q.contrat || o.contrat === q.contrat) && (!q.tele || o.tele));
+    // Le rayon (q.rayon) n'est pas appliqué en démo : il servira avec une vraie source géolocalisée.
+  }
+}];
+
+function card(o) {
+  return `<article class="card"><span class="badge">DEMO — cette offre n'est pas réelle</span><h3>${esc(o.titre)}</h3>
+  <p>${esc(o.ent)} · ${esc(o.ville)} · ${esc(o.contrat)}${o.tele ? ' · Télétravail' : ''}</p><p>${esc(o.desc)}</p><p class="steps">${esc(o.date)} · Source : ${esc(o.source)}</p>
+  <a class="btn sm" href="#/offre/${o.id}">Voir l'offre</a></article>`;
+}
+
+function renderJobs(root) {
+  root.innerHTML = `<h1>Trouver un emploi</h1><form class="card" id="sf"><div class="cols">
+  <label>Métier ou mot-clé<input id="s_q" placeholder="Vendeur, comptable…"></label><label>Ville<input id="s_ville" placeholder="Nancy"></label>
+  <label>Rayon<select id="s_rayon">${[0, 10, 25, 50, 100].map(k => `<option value="${k}">${k ? k + ' km' : 'Non précisé'}</option>`).join('')}</select></label>
+  <label>Contrat<select id="s_contrat"><option value="">Tous</option>${['CDI', 'CDD', 'Stage', 'Alternance', 'Intérim', 'Temps partiel'].map(c => `<option>${c}</option>`).join('')}</select></label></div>
+  <label><input type="checkbox" id="s_tele">Télétravail uniquement</label><button class="btn">Rechercher</button></form>
+  <p class="note">Version de démonstration : les offres ci-dessous sont fictives.</p><div id="res" class="grid" aria-live="polite"></div>`;
+  const run = async e => {
+    e?.preventDefault(); $('#res').innerHTML = '<p class="steps"><span class="spin"></span>Recherche en cours…</p>';
+    const q = { q: $('#s_q').value, ville: $('#s_ville').value, rayon: +$('#s_rayon').value, contrat: $('#s_contrat').value, tele: $('#s_tele').checked };
+    const r = (await Promise.all(JobSources.map(s => s.search(q)))).flat();
+    $('#res').innerHTML = r.map(card).join('') || '<p>Aucune offre ne correspond. Essaie avec moins de filtres.</p>';
+  };
+  $('#sf').onsubmit = run; run();
+}
+
+function renderOffer(root, id) {
+  const o = offerById(id);
+  if (!o) { root.innerHTML = '<h1>Offre introuvable</h1><a href="#/emplois">Retour</a>'; return; }
+  const mine = cv.skills.map(s => norm(s.nom));
+  const has = o.competences.filter(c => mine.some(m => m && (norm(c).includes(m) || m.includes(norm(c)))));
+  const miss = o.competences.filter(c => !has.includes(c));
+  root.innerHTML = `<a href="#/emplois">← Retour aux offres</a><article class="card" style="margin-top:12px"><span class="badge">DEMO — cette offre n'est pas réelle</span>
+  <h1>${esc(o.titre)}</h1><p>${esc(o.ent)} · ${esc(o.ville)} · ${esc(o.contrat)} · ${esc(o.date)} · Source : ${esc(o.source)}</p><p>${esc(o.desc)}</p>
+  <h2>Compétences demandées</h2><p>${o.competences.map(c => `<span class="tag">${esc(c)}</span>`).join('')}</p>
+  ${o.url ? `<a class="btn" href="${esc(o.url)}" target="_blank" rel="noopener">Voir l'offre originale</a>` : '<button class="btn" disabled>Voir l\'offre originale (indisponible en démo)</button>'}
+  <a class="btn ghost" href="#/lettre?offre=${o.id}">Préparer ma lettre pour cette offre</a></article>
+  <article class="card" style="margin-top:16px"><h2>Comment adapter ma candidature ?</h2>
+  <p><b>Compétences déjà dans ton CV :</b> ${has.map(c => `<span class="tag ok">${esc(c)}</span>`).join('') || 'aucune détectée'}</p>
+  <p><b>À mettre en avant ou à vérifier :</b> ${miss.map(c => `<span class="tag">${esc(c)}</span>`).join('') || 'rien de plus'}</p>
+  <p><b>Mots-clés à reprendre :</b> ${o.competences.map(esc).join(', ')}</p>
+  <ul><li>Reprends dans ton CV les mots de l'annonce, si ils décrivent vraiment ton expérience.</li><li>Donne un exemple concret par compétence.</li><li>Relis et personnalise ta lettre.</li></ul>
+  <p class="steps">Ce sont des conseils généraux : ils ne garantissent pas que ta candidature sera retenue.</p>
+  ${cv.skills.length ? '' : '<p class="note">Ajoute tes compétences dans <a href="#/cv">ton CV</a> pour une comparaison plus précise.</p>'}</article>`;
+}
+
+// ===== app.js =====
+const TITLES = {
+  '/': 'JobStart — Crée ton CV et prépare ta candidature',
+  '/cv': 'Créer un CV gratuitement – JobStart',
+  '/lettre': 'Lettre de motivation – JobStart',
+  '/emplois': 'Recherche d\'emploi, stage, alternance – JobStart',
+  '/offre': 'Détail de l\'offre – JobStart',
+  '/apropos': 'À propos et contact – JobStart'
+};
+
+const homeHTML = () => `<section class="hero"><span class="eyebrow">Gratuit pour commencer • Simple • Rapide</span><h1>Ton prochain emploi commence ici.</h1>
+<p class="lead">Crée ton CV, prépare ta candidature et trouve des opportunités adaptées à ton profil.</p>
+<a class="btn" href="#/cv">Créer mon CV gratuitement</a><a class="btn ghost" href="#/emplois">Trouver une offre</a>
+<p class="mini">Sans compte. Tes données restent dans ton navigateur.</p></section>
+<section aria-labelledby="h-tout"><h2 class="sec" id="h-tout">Tout ce qu'il te faut pour candidater</h2><p class="sub">Quatre outils simples, au même endroit.</p><div class="grid">
+<article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg></div><h3>CV</h3><p>Crée un CV professionnel en quelques minutes.</p></article>
+<article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><h3>Lettre de motivation</h3><p>Prépare une lettre adaptée à ton poste.</p></article>
+<article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><h3>Offres d'emploi</h3><p>Découvre des opportunités correspondant à ta recherche.</p></article>
+<article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>Préparation</h3><p>Identifie les compétences à mettre en avant.</p></article></div></section>
+<section aria-labelledby="h-3"><h2 class="sec" id="h-3">Comment ça marche ?</h2><p class="sub">Trois étapes, à ton rythme.</p><div class="grid">
+${['Crée ton profil|Renseigne tes infos et choisis un modèle de CV.', 'Prépare ta candidature|Génère une lettre et repère les mots-clés d\'une offre.', 'Trouve une opportunité|Cherche par métier, ville et type de contrat.'].map((s, i) => { const [t, d] = s.split('|'); return `<article class="card"><span class="num">${i + 1}</span><h3>${t}</h3><p>${d}</p></article>`; }).join('')}</div></section>
+<section class="cta"><h2>Prêt à commencer ?</h2><a class="btn" href="#/cv">Créer mon CV gratuitement</a></section>`;
+
+const aboutHTML = () => `<h1>À propos</h1><p>JobStart aide les candidats à préparer leur recherche d'emploi et leurs candidatures.</p>
+<p>Cette version est gratuite. Les offres affichées sont des démonstrations.</p><h2>Contact</h2>
+<p>Coordonnées à renseigner dans le code du site (fonction <code>aboutHTML</code>) avant la mise en ligne.</p>`;
+
+function route() {
+  const [path, qs] = (location.hash.slice(1) || '/').split('?');
+  const q = Object.fromEntries(new URLSearchParams(qs || ''));
+  const root = $('#app'), seg = path.split('/');
+  const base = '/' + (seg[1] || '');
+  document.title = TITLES[base] || TITLES['/'];
+  if (base === '/cv') renderCV(root);
+  else if (base === '/lettre') renderLetter(root, q);
+  else if (base === '/emplois') renderJobs(root);
+  else if (base === '/offre') renderOffer(root, seg[2]);
+  else if (base === '/apropos') root.innerHTML = aboutHTML();
+  else root.innerHTML = homeHTML();
+  $('#nav').classList.remove('open'); const cur = '#' + (base === '/offre' ? '/emplois' : base);
+  document.querySelectorAll('#nav a:not(.btn)').forEach(a => a.getAttribute('href') === cur ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current')); $('#burger').setAttribute('aria-expanded', 'false');
+  window.scrollTo(0, 0); root.focus();
+}
+
+$('#nav').onclick = e => { if (e.target.closest('a')) { $('#nav').classList.remove('open'); $('#burger').setAttribute('aria-expanded', 'false'); } };
+$('#burger').onclick = () => { const o = $('#nav').classList.toggle('open'); $('#burger').setAttribute('aria-expanded', o); };
+$('#wipe').onclick = () => { if (confirm('Supprimer ton CV et ta lettre enregistrés dans ce navigateur ?')) { KEYS.forEach(k => localStorage.removeItem(k)); location.reload(); } };
+window.addEventListener('hashchange', route);
+route();
+
+</script>
+</body></html>
